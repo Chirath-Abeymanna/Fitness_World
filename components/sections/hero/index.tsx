@@ -14,6 +14,7 @@ export function Hero() {
   const textY = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   const videoOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
+  const indicatorOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
 
   return (
     <section
@@ -66,9 +67,7 @@ export function Hero() {
             <div key={word} className="overflow-hidden">
               <motion.h1
                 className={`text-7xl font-bold tracking-tighter uppercase leading-none ${
-                  word === "BEST"
-                    ? "text-white/30"
-                    : "text-white"
+                  word === "BEST" ? "text-white/30" : "text-white"
                 }`}
                 initial={{ y: "110%", opacity: 0 }}
                 animate={{ y: "0%", opacity: 1 }}
@@ -134,8 +133,8 @@ export function Hero() {
                     word === "YOUR"
                       ? "text-white ml-0"
                       : word === "BEST"
-                      ? "text-[#2C2C2C] ml-12 lg:ml-56"
-                      : "text-white ml-16 md:ml-80"
+                        ? "text-[#2C2C2C] ml-12 lg:ml-56"
+                        : "text-white ml-16 md:ml-80"
                   }`}
                   initial={{ y: "110%", opacity: 0 }}
                   animate={{ y: "0%", opacity: 1 }}
@@ -190,7 +189,8 @@ export function Hero() {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.0, duration: 0.6 }}
+        transition={{ delay: 1.0, duration: 0.6, ease: "easeOut" }}
+        style={{ opacity: indicatorOpacity }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#D5A310] z-10 pointer-events-none"
       >
         <motion.div
@@ -199,7 +199,9 @@ export function Hero() {
         >
           <ArrowDown size={16} />
         </motion.div>
-        <span className="text-xs font-mono tracking-widest uppercase">Scroll</span>
+        <span className="text-xs font-mono tracking-widest uppercase">
+          Scroll
+        </span>
       </motion.div>
     </section>
   );
