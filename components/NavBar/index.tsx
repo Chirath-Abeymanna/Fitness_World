@@ -20,8 +20,8 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="container mx-auto px-20 h-20 flex items-center justify-between">
+      <nav className="fixed top-0 left-0 right-0 z-[100] bg-black/20 backdrop-blur-md border-b border-white/10">
+        <div className="container mx-auto px-10 h-20 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 text-primary">
             <img
@@ -50,7 +50,6 @@ export function Navbar() {
               <Link href="#contact">Get In Touch</Link>
             </Button>
 
-            {/* Hamburger — mobile only */}
             <button
               className="md:hidden relative w-10 h-10 flex items-center justify-center rounded-full border border-white/10 bg-black/40 text-white hover:bg-white/10 transition-all duration-200"
               onClick={() => setOpen((prev) => !prev)}
@@ -90,36 +89,31 @@ export function Navbar() {
       <AnimatePresence>
         {open && (
           <>
-            {/* Backdrop */}
             <motion.div
-              className="fixed inset-0 z-40 bg-black/70 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-[150] bg-black/70 backdrop-blur-sm md:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
             />
 
-            {/* Drawer panel */}
             <motion.div
-              className="fixed top-0 right-0 z-50 h-full w-80 md:hidden flex flex-col overflow-hidden"
+              className="fixed top-0 right-0 z-[200] h-full w-80 md:hidden flex flex-col overflow-hidden"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              {/* Glass background */}
               <div className="absolute inset-0 bg-[#0a0a0a]/95 border-l border-white/6" />
 
               <motion.div
-                className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-[#D5A310] to-transparent"
+                className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#D5A310] to-transparent"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               />
 
-              {/* Content */}
               <div className="relative flex flex-col h-full px-8 pt-24 pb-10">
-                {/* Nav links */}
                 <div className="flex flex-col gap-1">
                   {navLinks.map(({ href, label, number }, i) => (
                     <motion.div
@@ -156,12 +150,9 @@ export function Navbar() {
                   ))}
                 </div>
 
-                {/* Bottom section */}
                 <div className="mt-auto flex flex-col gap-5">
-                  {/* Divider */}
                   <div className="h-px bg-white/6" />
 
-                  {/* CTA */}
                   <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -174,7 +165,6 @@ export function Navbar() {
                     </Button>
                   </motion.div>
 
-                  {/* Footer note */}
                   <motion.p
                     className="text-[10px] text-center font-mono text-white/15 tracking-widest uppercase"
                     initial={{ opacity: 0 }}

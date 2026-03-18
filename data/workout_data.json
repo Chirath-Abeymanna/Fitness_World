@@ -1,0 +1,560 @@
+[
+  {
+    "image": "/img/workouts/full-body.avif",
+    "title": "Full Body Blast",
+    "frequency": "5 days - per week",
+    "difficulty": "Intermediate",
+    "duration": "60 min",
+    "description": "A full-body workout targeting all major muscle groups in a single session. Perfect for building overall strength and burning calories efficiently.",
+    "days": [
+      {
+        "day": "Day 1 - Monday",
+        "focus": "Strength",
+        "exercises": [
+          {
+            "name": "Barbell Back Squat",
+            "sets": 4,
+            "reps": "8-10",
+            "rest": "90s",
+            "notes": "Keep chest up, knees tracking over toes"
+          },
+          {
+            "name": "Bench Press",
+            "sets": 4,
+            "reps": "8-10",
+            "rest": "90s",
+            "notes": "Elbows at 45° from torso"
+          },
+          {
+            "name": "Bent Over Row",
+            "sets": 3,
+            "reps": "10-12",
+            "rest": "60s",
+            "notes": "Neutral spine throughout"
+          },
+          {
+            "name": "Dumbbell Shoulder Press",
+            "sets": 3,
+            "reps": "12",
+            "rest": "60s"
+          },
+          { "name": "Plank Hold", "sets": 3, "reps": "45s", "rest": "30s" }
+        ]
+      },
+      {
+        "day": "Day 2 - Tuesday",
+        "focus": "Hypertrophy",
+        "exercises": [
+          {
+            "name": "Incline Dumbbell Press",
+            "sets": 4,
+            "reps": "12",
+            "rest": "60s"
+          },
+          { "name": "Cable Row", "sets": 4, "reps": "12", "rest": "60s" },
+          { "name": "Lateral Raises", "sets": 3, "reps": "15", "rest": "45s" },
+          {
+            "name": "Romanian Deadlift",
+            "sets": 3,
+            "reps": "12",
+            "rest": "75s"
+          },
+          { "name": "Leg Curl", "sets": 3, "reps": "15", "rest": "45s" }
+        ]
+      },
+      {
+        "day": "Day 3 - Wednesday",
+        "focus": "Active Recovery",
+        "exercises": [
+          {
+            "name": "Light Treadmill Walk",
+            "sets": 1,
+            "reps": "20 min",
+            "rest": "0s"
+          },
+          {
+            "name": "Hip Flexor Stretch",
+            "sets": 2,
+            "reps": "60s each",
+            "rest": "0s"
+          },
+          { "name": "Foam Rolling", "sets": 1, "reps": "10 min", "rest": "0s" },
+          {
+            "name": "Dead Bug",
+            "sets": 3,
+            "reps": "10 each side",
+            "rest": "30s"
+          }
+        ]
+      },
+      {
+        "day": "Day 4 - Thursday",
+        "focus": "Strength",
+        "exercises": [
+          {
+            "name": "Deadlift",
+            "sets": 4,
+            "reps": "6",
+            "rest": "2min",
+            "notes": "Full reset between reps"
+          },
+          { "name": "Pull-ups", "sets": 4, "reps": "Max", "rest": "90s" },
+          { "name": "Overhead Press", "sets": 3, "reps": "8", "rest": "90s" },
+          { "name": "Leg Press", "sets": 3, "reps": "15", "rest": "75s" },
+          { "name": "Ab Wheel Rollout", "sets": 3, "reps": "10", "rest": "60s" }
+        ]
+      },
+      {
+        "day": "Day 5 - Friday",
+        "focus": "Conditioning",
+        "exercises": [
+          {
+            "name": "Kettlebell Swings",
+            "sets": 4,
+            "reps": "20",
+            "rest": "45s"
+          },
+          { "name": "Burpees", "sets": 4, "reps": "12", "rest": "30s" },
+          { "name": "Box Jumps", "sets": 3, "reps": "10", "rest": "60s" },
+          {
+            "name": "Mountain Climbers",
+            "sets": 3,
+            "reps": "30s",
+            "rest": "20s"
+          },
+          { "name": "Jump Rope", "sets": 3, "reps": "60s", "rest": "30s" }
+        ]
+      }
+    ]
+  },
+  {
+    "image": "/img/workouts/legs.jpg",
+    "title": "Push Pull Legs",
+    "frequency": "6 days - per week",
+    "difficulty": "Intermediate",
+    "duration": "55 min",
+    "description": "The classic PPL split — one of the most effective programs for building muscle and strength. Each muscle group is trained twice per week.",
+    "days": [
+      {
+        "day": "Day 1 - Monday",
+        "focus": "Push",
+        "exercises": [
+          {
+            "name": "Flat Barbell Press",
+            "sets": 4,
+            "reps": "6-8",
+            "rest": "90s"
+          },
+          {
+            "name": "Incline Dumbbell Press",
+            "sets": 4,
+            "reps": "10-12",
+            "rest": "75s",
+            "notes": "Targets upper chest"
+          },
+          {
+            "name": "Overhead Press",
+            "sets": 3,
+            "reps": "8-10",
+            "rest": "75s"
+          },
+          {
+            "name": "Cable Lateral Raise",
+            "sets": 3,
+            "reps": "15",
+            "rest": "45s"
+          },
+          { "name": "Tricep Pushdown", "sets": 3, "reps": "15", "rest": "45s" }
+        ]
+      },
+      {
+        "day": "Day 2 - Tuesday",
+        "focus": "Pull",
+        "exercises": [
+          { "name": "Deadlift", "sets": 4, "reps": "5", "rest": "2min" },
+          {
+            "name": "Weighted Pull-ups",
+            "sets": 4,
+            "reps": "6-8",
+            "rest": "90s"
+          },
+          {
+            "name": "Seated Cable Row",
+            "sets": 3,
+            "reps": "12",
+            "rest": "60s"
+          },
+          { "name": "Barbell Curl", "sets": 3, "reps": "10-12", "rest": "60s" },
+          { "name": "Hammer Curl", "sets": 3, "reps": "12 each", "rest": "45s" }
+        ]
+      },
+      {
+        "day": "Day 3 - Wednesday",
+        "focus": "Legs",
+        "exercises": [
+          { "name": "Back Squat", "sets": 4, "reps": "8", "rest": "2min" },
+          {
+            "name": "Romanian Deadlift",
+            "sets": 4,
+            "reps": "10",
+            "rest": "90s"
+          },
+          { "name": "Leg Press", "sets": 3, "reps": "15", "rest": "75s" },
+          {
+            "name": "Walking Lunges",
+            "sets": 3,
+            "reps": "12 each",
+            "rest": "60s"
+          },
+          {
+            "name": "Standing Calf Raise",
+            "sets": 4,
+            "reps": "20",
+            "rest": "45s"
+          }
+        ]
+      },
+      {
+        "day": "Day 4 - Thursday",
+        "focus": "Push",
+        "exercises": [
+          {
+            "name": "Incline Barbell Press",
+            "sets": 4,
+            "reps": "8-10",
+            "rest": "90s"
+          },
+          { "name": "Cable Fly", "sets": 3, "reps": "15", "rest": "60s" },
+          {
+            "name": "Dumbbell Shoulder Press",
+            "sets": 4,
+            "reps": "12",
+            "rest": "60s"
+          },
+          { "name": "Face Pulls", "sets": 3, "reps": "15", "rest": "45s" },
+          { "name": "Skull Crushers", "sets": 3, "reps": "12", "rest": "60s" }
+        ]
+      },
+      {
+        "day": "Day 5 - Friday",
+        "focus": "Pull",
+        "exercises": [
+          {
+            "name": "Single Arm Dumbbell Row",
+            "sets": 4,
+            "reps": "10 each",
+            "rest": "60s"
+          },
+          { "name": "Lat Pulldown", "sets": 4, "reps": "12", "rest": "60s" },
+          {
+            "name": "Chest Supported Row",
+            "sets": 3,
+            "reps": "12",
+            "rest": "60s"
+          },
+          { "name": "EZ Bar Curl", "sets": 3, "reps": "12", "rest": "60s" },
+          {
+            "name": "Concentration Curl",
+            "sets": 3,
+            "reps": "15 each",
+            "rest": "45s"
+          }
+        ]
+      },
+      {
+        "day": "Day 6 - Saturday",
+        "focus": "Legs",
+        "exercises": [
+          { "name": "Front Squat", "sets": 4, "reps": "8", "rest": "2min" },
+          { "name": "Leg Curl", "sets": 4, "reps": "12-15", "rest": "60s" },
+          { "name": "Hack Squat", "sets": 3, "reps": "12", "rest": "75s" },
+          { "name": "Glute Bridge", "sets": 3, "reps": "15", "rest": "45s" },
+          {
+            "name": "Seated Calf Raise",
+            "sets": 4,
+            "reps": "20",
+            "rest": "30s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "image": "/img/workouts/power.jpg",
+    "title": "Power & Strength",
+    "frequency": "4 days - per week",
+    "difficulty": "Hard",
+    "duration": "75 min",
+    "description": "Heavy compound lifting focused on the big three — squat, bench, deadlift — to build raw strength and nervous system power.",
+    "days": [
+      {
+        "day": "Day 1 - Monday",
+        "focus": "Squat",
+        "exercises": [
+          {
+            "name": "Back Squat — Heavy",
+            "sets": 1,
+            "reps": "1 at 90% 1RM",
+            "rest": "3min",
+            "notes": "Work up gradually"
+          },
+          {
+            "name": "Back Squat — Back Off",
+            "sets": 3,
+            "reps": "3 at 80%",
+            "rest": "2min"
+          },
+          { "name": "Pause Squat", "sets": 3, "reps": "3", "rest": "2min" },
+          { "name": "Leg Press", "sets": 3, "reps": "10", "rest": "90s" },
+          { "name": "Ab Wheel", "sets": 3, "reps": "10", "rest": "60s" }
+        ]
+      },
+      {
+        "day": "Day 2 - Tuesday",
+        "focus": "Bench",
+        "exercises": [
+          {
+            "name": "Bench Press — Heavy",
+            "sets": 1,
+            "reps": "1 at 90% 1RM",
+            "rest": "3min"
+          },
+          {
+            "name": "Bench Press — Back Off",
+            "sets": 3,
+            "reps": "3 at 80%",
+            "rest": "2min"
+          },
+          { "name": "Close Grip Bench", "sets": 3, "reps": "5", "rest": "90s" },
+          { "name": "Overhead Press", "sets": 3, "reps": "8", "rest": "75s" },
+          { "name": "Tricep Dips", "sets": 3, "reps": "Max", "rest": "60s" }
+        ]
+      },
+      {
+        "day": "Day 3 - Thursday",
+        "focus": "Deadlift",
+        "exercises": [
+          {
+            "name": "Deadlift — Heavy",
+            "sets": 1,
+            "reps": "1 at 90% 1RM",
+            "rest": "3min",
+            "notes": "Chalk up, belt on"
+          },
+          {
+            "name": "Deadlift — Back Off",
+            "sets": 2,
+            "reps": "3 at 80%",
+            "rest": "2min"
+          },
+          {
+            "name": "Romanian Deadlift",
+            "sets": 3,
+            "reps": "8",
+            "rest": "90s"
+          },
+          { "name": "Pull-ups", "sets": 3, "reps": "Max", "rest": "90s" },
+          { "name": "Plank", "sets": 3, "reps": "60s", "rest": "30s" }
+        ]
+      },
+      {
+        "day": "Day 4 - Saturday",
+        "focus": "Accessory",
+        "exercises": [
+          { "name": "Front Squat", "sets": 3, "reps": "5", "rest": "2min" },
+          { "name": "Paused Bench", "sets": 3, "reps": "5", "rest": "90s" },
+          { "name": "Barbell Row", "sets": 4, "reps": "8", "rest": "75s" },
+          { "name": "GHD Raise", "sets": 3, "reps": "10", "rest": "60s" },
+          { "name": "Farmer's Carry", "sets": 3, "reps": "40m", "rest": "60s" }
+        ]
+      }
+    ]
+  },
+  {
+    "image": "/img/workouts/hitt.webp",
+    "title": "HIIT Fat Burner",
+    "frequency": "3 days - per week",
+    "difficulty": "Hard",
+    "duration": "30 min",
+    "description": "High-intensity interval training to torch fat, improve cardiovascular fitness, and boost metabolism for the next 24 hours.",
+    "days": [
+      {
+        "day": "Day 1 - Monday",
+        "focus": "Lower Body HIIT",
+        "exercises": [
+          { "name": "Jump Squat", "sets": 4, "reps": "15", "rest": "30s" },
+          {
+            "name": "Box Jumps",
+            "sets": 4,
+            "reps": "10",
+            "rest": "30s",
+            "notes": "Step down, don't jump down"
+          },
+          {
+            "name": "Sprint Intervals",
+            "sets": 6,
+            "reps": "20s sprint / 40s walk",
+            "rest": "40s"
+          },
+          {
+            "name": "Walking Lunges",
+            "sets": 3,
+            "reps": "20 total",
+            "rest": "30s"
+          },
+          { "name": "Jump Rope", "sets": 3, "reps": "60s", "rest": "20s" }
+        ]
+      },
+      {
+        "day": "Day 2 - Wednesday",
+        "focus": "Upper Body HIIT",
+        "exercises": [
+          { "name": "Burpees", "sets": 4, "reps": "15", "rest": "30s" },
+          {
+            "name": "Push-up Variations",
+            "sets": 4,
+            "reps": "20",
+            "rest": "30s"
+          },
+          { "name": "Battle Ropes", "sets": 4, "reps": "30s", "rest": "30s" },
+          {
+            "name": "Medicine Ball Slam",
+            "sets": 4,
+            "reps": "12",
+            "rest": "30s"
+          },
+          {
+            "name": "Mountain Climbers",
+            "sets": 4,
+            "reps": "30s",
+            "rest": "15s"
+          }
+        ]
+      },
+      {
+        "day": "Day 3 - Friday",
+        "focus": "Full Body HIIT",
+        "exercises": [
+          {
+            "name": "Kettlebell Swings",
+            "sets": 4,
+            "reps": "20",
+            "rest": "30s",
+            "notes": "Hip hinge power drive"
+          },
+          { "name": "Thrusters", "sets": 4, "reps": "12", "rest": "45s" },
+          { "name": "Tuck Jumps", "sets": 3, "reps": "10", "rest": "30s" },
+          {
+            "name": "Renegade Rows",
+            "sets": 3,
+            "reps": "10 each",
+            "rest": "45s"
+          },
+          { "name": "Plank to Push-up", "sets": 3, "reps": "10", "rest": "30s" }
+        ]
+      }
+    ]
+  },
+  {
+    "image": "/img/workouts/hyper.jpg",
+    "title": "Hypertrophy Program",
+    "frequency": "5 days - per week",
+    "difficulty": "Intermediate",
+    "duration": "50 min",
+    "description": "High volume training designed for maximum muscle growth using supersets, drop sets, and pump-focused techniques across all muscle groups.",
+    "days": [
+      {
+        "day": "Day 1 - Monday",
+        "focus": "Chest & Triceps",
+        "exercises": [
+          {
+            "name": "Flat Barbell Press",
+            "sets": 4,
+            "reps": "10",
+            "rest": "75s"
+          },
+          {
+            "name": "Incline Dumbbell Press",
+            "sets": 4,
+            "reps": "12",
+            "rest": "60s"
+          },
+          { "name": "Cable Fly", "sets": 3, "reps": "15", "rest": "45s" },
+          { "name": "Skull Crushers", "sets": 3, "reps": "12", "rest": "60s" },
+          {
+            "name": "Tricep Pushdown — Drop Set",
+            "sets": 3,
+            "reps": "10→8→6",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "day": "Day 2 - Tuesday",
+        "focus": "Back & Biceps",
+        "exercises": [
+          { "name": "Pull-ups", "sets": 4, "reps": "Max", "rest": "90s" },
+          { "name": "Barbell Row", "sets": 4, "reps": "10", "rest": "75s" },
+          { "name": "Lat Pulldown", "sets": 3, "reps": "12", "rest": "60s" },
+          { "name": "EZ Bar Curl", "sets": 4, "reps": "12", "rest": "60s" },
+          {
+            "name": "Cable Curl — Drop Set",
+            "sets": 3,
+            "reps": "10→8→6",
+            "rest": "60s",
+            "notes": "Drop weight each mini-set"
+          }
+        ]
+      },
+      {
+        "day": "Day 3 - Wednesday",
+        "focus": "Legs",
+        "exercises": [
+          { "name": "Back Squat", "sets": 4, "reps": "10", "rest": "90s" },
+          { "name": "Leg Press", "sets": 4, "reps": "15", "rest": "75s" },
+          { "name": "Leg Extension", "sets": 3, "reps": "15", "rest": "45s" },
+          { "name": "Leg Curl", "sets": 3, "reps": "15", "rest": "45s" },
+          { "name": "Calf Raise", "sets": 4, "reps": "20", "rest": "30s" }
+        ]
+      },
+      {
+        "day": "Day 4 - Thursday",
+        "focus": "Shoulders",
+        "exercises": [
+          { "name": "Overhead Press", "sets": 4, "reps": "10", "rest": "75s" },
+          { "name": "Lateral Raises", "sets": 5, "reps": "15", "rest": "45s" },
+          { "name": "Front Raises", "sets": 3, "reps": "12", "rest": "45s" },
+          { "name": "Face Pulls", "sets": 4, "reps": "15", "rest": "45s" },
+          { "name": "Upright Row", "sets": 3, "reps": "12", "rest": "60s" }
+        ]
+      },
+      {
+        "day": "Day 5 - Friday",
+        "focus": "Arms & Abs",
+        "exercises": [
+          {
+            "name": "Concentration Curl",
+            "sets": 3,
+            "reps": "15 each",
+            "rest": "45s",
+            "notes": "Peak contraction squeeze"
+          },
+          {
+            "name": "Hammer Curl",
+            "sets": 3,
+            "reps": "12 each",
+            "rest": "45s"
+          },
+          { "name": "Tricep Dips", "sets": 3, "reps": "15", "rest": "45s" },
+          {
+            "name": "Overhead Tricep Extension",
+            "sets": 3,
+            "reps": "15",
+            "rest": "45s"
+          },
+          { "name": "Cable Crunches", "sets": 4, "reps": "15", "rest": "30s" }
+        ]
+      }
+    ]
+  }
+]
