@@ -8,6 +8,13 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { submitContactForm } from "@/app/lib/contact";
 
+interface FormErrors {
+  fullName?: string;
+  email?: string;
+  phone?: string;
+  message?: string;
+}
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -15,18 +22,56 @@ export default function ContactForm() {
     phone: "",
     message: "",
   });
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
+  const validate = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = "Full name is required.";
+    } else if (formData.fullName.trim().length < 2) {
+      newErrors.fullName = "Name must be at least 2 characters.";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email address is required.";
+    } else if (
+      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)
+    ) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+
+    if (formData.phone && !/^[+\d\s\-()]{7,15}$/.test(formData.phone)) {
+      newErrors.phone = "Please enter a valid phone number.";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required.";
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    setFormData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+    // Clear error for field as user types
+    if (errors[id as keyof FormErrors]) {
+      setErrors((prev) => ({ ...prev, [id]: undefined }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validate()) return;
     setIsSubmitting(true);
     setErrorMsg("");
     try {
@@ -34,6 +79,7 @@ export default function ContactForm() {
       if (res.success) {
         setIsSuccess(true);
         setFormData({ fullName: "", email: "", phone: "", message: "" });
+        setErrors({});
         setTimeout(() => setIsSuccess(false), 5000);
       } else {
         setErrorMsg("Failed to send message. Please try again later.");
@@ -50,6 +96,7 @@ export default function ContactForm() {
       <form
         onSubmit={handleSubmit}
         className="flex flex-col gap-4 p-5 bg-card/50 rounded-2xl border border-ring/10"
+        noValidate
       >
         {/* Full Name */}
         <div className="grid gap-1.5">
@@ -59,12 +106,18 @@ export default function ContactForm() {
           <Input
             type="text"
             id="fullName"
-            required
             value={formData.fullName}
             onChange={handleChange}
             placeholder="Enter Your Full Name"
-            className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 text-white placeholder:text-white/30 h-9 shadow-none focus:ring-0 focus:border-primary focus-visible:ring-0 focus-visible:border-primary transition-colors duration-300"
+            className={`bg-transparent border-0 border-b rounded-none px-0 text-white placeholder:text-white/30 h-9 shadow-none focus:ring-0 focus-visible:ring-0 transition-colors duration-300 ${
+              errors.fullName
+                ? "border-red-500 focus-visible:border-red-500"
+                : "border-white/20 focus-visible:border-primary"
+            }`}
           />
+          {errors.fullName && (
+            <p className="text-red-400 text-[11px] mt-0.5">{errors.fullName}</p>
+          )}
         </div>
 
         {/* Email */}
@@ -75,12 +128,18 @@ export default function ContactForm() {
           <Input
             type="email"
             id="email"
-            required
             value={formData.email}
             onChange={handleChange}
             placeholder="Enter Your Email"
-            className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 text-white placeholder:text-white/30 h-9 shadow-none focus:ring-0 focus:border-primary focus-visible:ring-0 focus-visible:border-primary transition-colors duration-300"
+            className={`bg-transparent border-0 border-b rounded-none px-0 text-white placeholder:text-white/30 h-9 shadow-none focus:ring-0 focus-visible:ring-0 transition-colors duration-300 ${
+              errors.email
+                ? "border-red-500 focus-visible:border-red-500"
+                : "border-white/20 focus-visible:border-primary"
+            }`}
           />
+          {errors.email && (
+            <p className="text-red-400 text-[11px] mt-0.5">{errors.email}</p>
+          )}
         </div>
 
         {/* Phone */}
@@ -94,8 +153,15 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             placeholder="Enter Your Phone Number"
-            className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 text-white placeholder:text-white/30 h-9 shadow-none focus:ring-0 focus:border-primary focus-visible:ring-0 focus-visible:border-primary transition-colors duration-300"
+            className={`bg-transparent border-0 border-b rounded-none px-0 text-white placeholder:text-white/30 h-9 shadow-none focus:ring-0 focus-visible:ring-0 transition-colors duration-300 ${
+              errors.phone
+                ? "border-red-500 focus-visible:border-red-500"
+                : "border-white/20 focus-visible:border-primary"
+            }`}
           />
+          {errors.phone && (
+            <p className="text-red-400 text-[11px] mt-0.5">{errors.phone}</p>
+          )}
         </div>
 
         {/* Message */}
@@ -105,13 +171,19 @@ export default function ContactForm() {
           </Label>
           <Textarea
             id="message"
-            required
             value={formData.message}
             onChange={handleChange}
             rows={4}
             placeholder="Enter Your Message"
-            className="bg-white/5 border-white/10 py-3 text-white placeholder:text-white/30 min-h-[100px] resize-none focus-visible:ring-primary focus-visible:border-primary transition-all duration-300"
+            className={`bg-white/5 border py-3 text-white placeholder:text-white/30 min-h-25 resize-none transition-all duration-300 ${
+              errors.message
+                ? "border-red-500 focus-visible:ring-red-500"
+                : "border-white/10 focus-visible:ring-primary focus-visible:border-primary"
+            }`}
           />
+          {errors.message && (
+            <p className="text-red-400 text-[11px] mt-0.5">{errors.message}</p>
+          )}
         </div>
 
         {errorMsg && <p className="text-red-500 text-xs">{errorMsg}</p>}
