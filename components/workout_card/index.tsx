@@ -187,7 +187,7 @@ export function WorkoutCard({
           <>
             {/* Backdrop */}
             <motion.div
-              className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-sm"
+              className="fixed inset-0 z-9999 bg-black/80 backdrop-blur-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -195,7 +195,7 @@ export function WorkoutCard({
             />
 
             {/* Modal */}
-            <motion.div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pointer-events-none">
+            <motion.div className="fixed inset-0 z-9999 flex items-center justify-center p-4 pointer-events-none">
               <motion.div
                 className="relative w-full max-w-5xl max-h-[70vh] rounded-2xl border border-[#D5A310]/30 bg-[#111] pointer-events-auto flex flex-col md:flex-row overflow-hidden"
                 initial={{ opacity: 0, scale: 0.92, y: 32 }}
