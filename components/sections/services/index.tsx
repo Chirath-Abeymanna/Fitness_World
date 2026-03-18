@@ -38,7 +38,7 @@ export function Services() {
     <section
       ref={sectionRef}
       id="services"
-      className="relative py-24 md:py-32 bg-background overflow-hidden"
+      className="relative py-24 md:py-32 bg-black overflow-hidden"
     >
       {/* ── Kettlebell decorations ── */}
       <motion.div

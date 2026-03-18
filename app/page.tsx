@@ -6,6 +6,7 @@ import { WorkOut } from "@/components/sections/workout";
 import { Plans } from "@/components/sections/plans";
 import { Team } from "@/components/sections/team";
 import { Contact } from "@/components/sections/contact";
+import { Footer } from "../components/Footer";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Team />
         <Contact />
       </main>
+      <Footer />
     </div>
   );
 }

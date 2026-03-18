@@ -27,7 +27,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   };
 
   return (
-    <Card className="relative mx-auto w-full max-w-64 min-h-56 lg:min-h-64 lg:max-w-105 rounded-xl border border-ring bg-card/35 shadow-md">
+    <Card className="relative mx-auto w-full max-w-64 min-h-56 lg:min-h-64 lg:max-w-105 rounded-xl border border-ring bg-card shadow-md">
       <CardHeader className="pb-2">
         <CardTitle className="text-lg font-semibold leading-tight text-primary sm:text-xl">
           {header}

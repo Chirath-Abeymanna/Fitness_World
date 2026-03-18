@@ -3,8 +3,6 @@ import emailjs from "@emailjs/browser";
 
 const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
 const OWNER_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_OWNER_TEMPLATE_ID!;
-const CONFIRMATION_TEMPLATE_ID =
-  process.env.NEXT_PUBLIC_EMAILJS_CONFIRMATION_TEMPLATE_ID!;
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
 export async function submitContactForm(formData: {
@@ -16,26 +14,19 @@ export async function submitContactForm(formData: {
   const { fullName, email, phone, message } = formData;
 
   try {
-    // 1. Notify site owner
+    // Initialize EmailJS on first use
+    emailjs.init(PUBLIC_KEY);
+
+    // Send to owner template (auto-reply is triggered by EmailJS template rules)
     await emailjs.send(
       SERVICE_ID,
       OWNER_TEMPLATE_ID,
       {
         from_name: fullName,
         from_email: email,
+        from_company: "Fitness Center",
         phone: phone || "Not provided",
         message: message,
-      },
-      PUBLIC_KEY,
-    );
-
-    // 2. Send acknowledgment to sender
-    await emailjs.send(
-      SERVICE_ID,
-      CONFIRMATION_TEMPLATE_ID,
-      {
-        to_name: fullName,
-        to_email: email,
       },
       PUBLIC_KEY,
     );

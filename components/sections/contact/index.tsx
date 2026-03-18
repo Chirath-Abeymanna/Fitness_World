@@ -96,7 +96,7 @@ export function Contact() {
               viewBox="0 0 60 300"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="h-full w-full max-h-[250px]"
+              className="h-full w-full max-h-[400px]"
               preserveAspectRatio="none"
             >
               <defs>
