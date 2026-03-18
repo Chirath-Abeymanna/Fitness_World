@@ -71,7 +71,7 @@ export function Team() {
           backgroundRepeat: "no-repeat",
           height: "100%",
           width: "100%",
-          opacity: 0.34,
+          opacity: 0.2,
         }}
       />
       <div className="container mx-auto px-6 max-w-6xl relative z-10">

@@ -49,7 +49,7 @@ export function WorkOut() {
 
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full bg-[#D5A310]/5 blur-[120px]" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-75 rounded-full bg-[#D5A310]/5 blur-[120px]" />
       </div>
 
       <motion.div

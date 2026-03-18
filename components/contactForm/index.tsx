@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { submitContactForm } from "@/app/lib/contact";
+import { submitContactForm } from "@/lib/contact";
 
 interface FormErrors {
   fullName?: string;
