@@ -2,6 +2,7 @@ import { Hero } from "../components/sections/hero";
 import { Navbar } from "../components/NavBar";
 import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/services";
+import { WorkOut } from "@/components/sections/workout";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <Services />{" "}
+        <Services /> <WorkOut />
       </main>
     </div>
   );

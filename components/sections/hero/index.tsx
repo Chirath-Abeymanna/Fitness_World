@@ -35,14 +35,14 @@ export function Hero() {
           className="w-full h-full md:w-auto md:h-auto"
         >
           {/* Mobile: fills screen | Desktop: tilted card */}
-          <div className="relative w-full h-screen lg:w-[280px] md:h-auto md:rotate-[-32deg] md:rounded-2xl overflow-hidden">
+          <div className="relative w-full h-screen lg:w-70 md:h-auto md:rotate-[-32deg] md:rounded-2xl overflow-hidden">
             <video
               autoPlay
               loop
               muted
               playsInline
               preload="auto"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover brightness-150"
             >
               <source src="/videos/hero.mp4" type="video/mp4" />
             </video>
@@ -67,7 +67,7 @@ export function Hero() {
             <div key={word} className="overflow-hidden">
               <motion.h1
                 className={`text-7xl font-bold tracking-tighter uppercase leading-none ${
-                  word === "BEST" ? "text-white/30" : "text-white"
+                  word === "BEST" ? "text-[#1c1c1c]" : "text-white"
                 }`}
                 initial={{ y: "110%", opacity: 0 }}
                 animate={{ y: "0%", opacity: 1 }}
@@ -131,9 +131,9 @@ export function Hero() {
                 <motion.h1
                   className={`text-8xl lg:text-9xl font-bold tracking-tighter uppercase leading-none pb-5 ${
                     word === "YOUR"
-                      ? "text-white ml-0"
+                      ? "text-white ml-0 mt-5"
                       : word === "BEST"
-                        ? "text-[#2C2C2C] ml-12 lg:ml-56"
+                        ? "text-[#414141] ml-12 lg:ml-56"
                         : "text-white ml-16 md:ml-80"
                   }`}
                   initial={{ y: "110%", opacity: 0 }}
@@ -157,7 +157,7 @@ export function Hero() {
                   className={`text-8xl lg:text-9xl font-bold tracking-tighter uppercase leading-none pb-5 ${
                     word === "STARTS"
                       ? "text-white pr-20"
-                      : "text-[#292113] mr-12 md:mr-12"
+                      : "text-[#564424] mr-12 md:mr-12"
                   }`}
                   initial={{ y: "110%", opacity: 0 }}
                   animate={{ y: "0%", opacity: 1 }}
@@ -191,7 +191,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.0, duration: 0.6, ease: "easeOut" }}
         style={{ opacity: indicatorOpacity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#D5A310] z-10 pointer-events-none"
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#D5A310] z-10 pointer-events-none"
       >
         <motion.div
           animate={{ y: [0, 6, 0] }}

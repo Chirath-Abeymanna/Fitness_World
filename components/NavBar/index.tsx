@@ -21,10 +21,14 @@ export function Navbar() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="container mx-auto px-20 h-20 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 text-primary">
-            <img src="/logo.jpg" alt="Logo" className="w-14 h-14 rounded-full" />
+            <img
+              src="/logo.jpg"
+              alt="Logo"
+              className="w-14 h-14 rounded-full"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -42,42 +46,42 @@ export function Navbar() {
 
           {/* Desktop CTA + Mobile Hamburger */}
           <div className="flex items-center gap-4">
-            <Button className="hidden md:flex rounded-full px-8 font-semibold" >
+            <Button className="hidden md:flex rounded-full p-5 text-white font-semibold hover:bg-[#906d05] transition-colors duration-300">
               <Link href="#contact">Get In Touch</Link>
             </Button>
 
             {/* Hamburger — mobile only */}
             <button
-  className="md:hidden relative w-10 h-10 flex items-center justify-center rounded-full border border-white/10 bg-black/40 text-white hover:bg-white/10 transition-all duration-200"
-  onClick={() => setOpen((prev) => !prev)}
-  aria-label="Toggle menu"
->
-  <AnimatePresence mode="wait">
-    {open ? (
-      <motion.span
-        key="close"
-        initial={{ rotate: -90, opacity: 0 }}
-        animate={{ rotate: 0, opacity: 1 }}
-        exit={{ rotate: 90, opacity: 0 }}
-        transition={{ duration: 0.2 }}
-        className="flex items-center justify-center"
-      >
-        <X size={18} strokeWidth={2.5} color="#ffffff" />
-      </motion.span>
-    ) : (
-      <motion.span
-        key="menu"
-        initial={{ rotate: 90, opacity: 0 }}
-        animate={{ rotate: 0, opacity: 1 }}
-        exit={{ rotate: -90, opacity: 0 }}
-        transition={{ duration: 0.2 }}
-        className="flex items-center justify-center"
-      >
-        <Menu size={18} strokeWidth={2.5} color="#ffffff" />
-      </motion.span>
-    )}
-  </AnimatePresence>
-</button>
+              className="md:hidden relative w-10 h-10 flex items-center justify-center rounded-full border border-white/10 bg-black/40 text-white hover:bg-white/10 transition-all duration-200"
+              onClick={() => setOpen((prev) => !prev)}
+              aria-label="Toggle menu"
+            >
+              <AnimatePresence mode="wait">
+                {open ? (
+                  <motion.span
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex items-center justify-center"
+                  >
+                    <X size={18} strokeWidth={2.5} color="#ffffff" />
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex items-center justify-center"
+                  >
+                    <Menu size={18} strokeWidth={2.5} color="#ffffff" />
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </button>
           </div>
         </div>
       </nav>
@@ -106,9 +110,8 @@ export function Navbar() {
               {/* Glass background */}
               <div className="absolute inset-0 bg-[#0a0a0a]/95 border-l border-white/6" />
 
-              {/* Gold accent line at top */}
               <motion.div
-                className="absolute top-0 left-0 right-0 h-[2px] bg-linear-to-r from-transparent via-[#D5A310] to-transparent"
+                className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-[#D5A310] to-transparent"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -116,7 +119,6 @@ export function Navbar() {
 
               {/* Content */}
               <div className="relative flex flex-col h-full px-8 pt-24 pb-10">
-
                 {/* Nav links */}
                 <div className="flex flex-col gap-1">
                   {navLinks.map(({ href, label, number }, i) => (
@@ -133,7 +135,7 @@ export function Navbar() {
                       <Link
                         href={href}
                         onClick={() => setOpen(false)}
-                        className="group flex items-center justify-between py-4 border-b border-white/[0.06] hover:border-[#D5A310]/30 transition-all duration-300"
+                        className="group flex items-center justify-between py-4 border-b border-white/6 hover:border-[#D5A310]/30 transition-all duration-300"
                       >
                         <div className="flex items-center gap-4">
                           <span className="text-[10px] font-mono text-white/20 group-hover:text-[#D5A310]/60 transition-colors duration-300">
@@ -157,7 +159,7 @@ export function Navbar() {
                 {/* Bottom section */}
                 <div className="mt-auto flex flex-col gap-5">
                   {/* Divider */}
-                  <div className="h-px bg-white/[0.06]" />
+                  <div className="h-px bg-white/6" />
 
                   {/* CTA */}
                   <motion.div
@@ -165,10 +167,7 @@ export function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
                   >
-                    <Button
-                      className="w-full rounded-full font-semibold h-12 text-sm tracking-wide"
-                      
-                    >
+                    <Button className="w-full rounded-full font-semibold h-12 text-sm tracking-wide">
                       <Link href="#contact" onClick={() => setOpen(false)}>
                         Get In Touch
                       </Link>

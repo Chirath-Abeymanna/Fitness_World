@@ -106,10 +106,10 @@ export function About() {
                 key={i}
                 className={`relative overflow-hidden rounded-lg border border-white/5 shadow-xl ${
                   i === 0
-                    ? "w-28 md:w-40 self-center md:self-center"
+                    ? "w-54 md:w-48 self-center md:self-center"
                     : i === 1
-                      ? "w-28 md:w-40 self-center md:self-start"
-                      : "w-28 md:w-40 self-center md:self-center"
+                      ? "w-54 md:w-48 self-center md:self-start"
+                      : "w-54 md:w-48 self-center md:self-center"
                 }`}
                 initial={{ opacity: 0, x: -30, rotate: i % 2 === 0 ? -2 : 1 }}
                 animate={
@@ -150,9 +150,23 @@ export function About() {
               className="h-full w-full max-h-80"
               preserveAspectRatio="none"
             >
+              <defs>
+                <linearGradient
+                  id="curveGradient"
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2="400"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0%" stopColor="#D5A310" stopOpacity="0.8" />
+                  <stop offset="40%" stopColor="#D5A310" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#FFFF" stopOpacity="1" />
+                </linearGradient>
+              </defs>
               <motion.path
                 d="M 30 0 C 30 0, 60 60, 30 120 C 0 180, 60 240, 30 310 C 15 350, 30 400, 30 400"
-                stroke="#D5A310"
+                stroke="url(#curveGradient)"
                 strokeWidth="2.5"
                 strokeLinecap="round"
                 fill="none"

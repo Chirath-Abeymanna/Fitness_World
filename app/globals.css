@@ -49,24 +49,24 @@
 
 :root {
   --background: #000000;
-  --foreground: #F1F0EB;
-  --card: #2C2C2C;
-  --card-foreground: #F1F0EB;
-  --popover: #2C2C2C;
-  --popover-foreground: #F1F0EB;
-  --primary: #D5A310;
+  --foreground: #f1f0eb;
+  --card: #2c2c2c;
+  --card-foreground: #f1f0eb;
+  --popover: #2c2c2c;
+  --popover-foreground: #f1f0eb;
+  --primary: #d5a310;
   --primary-foreground: #000000;
   --secondary: #292113;
-  --secondary-foreground: #F1F0EB;
-  --muted: #2C2C2C;
+  --secondary-foreground: #f1f0eb;
+  --muted: #2c2c2c;
   --muted-foreground: #a3a3a3; /* darker gray for muted text */
-  --accent: #D5A310;
+  --accent: #d5a310;
   --accent-foreground: #000000;
   --destructive: hsl(0 84.2% 60.2%);
-  --destructive-foreground: #F1F0EB;
+  --destructive-foreground: #f1f0eb;
   --border: #292113;
   --input: #292113;
-  --ring: #D5A310;
+  --ring: #d5a310;
   --chart-1: oklch(0.809 0.105 251.813);
   --chart-2: oklch(0.623 0.214 259.815);
   --chart-3: oklch(0.546 0.245 262.881);
@@ -85,24 +85,24 @@
 
 .dark {
   --background: #000000;
-  --foreground: #F1F0EB;
-  --card: #2C2C2C;
-  --card-foreground: #F1F0EB;
-  --popover: #2C2C2C;
-  --popover-foreground: #F1F0EB;
-  --primary: #D5A310;
+  --foreground: #f1f0eb;
+  --card: #2c2c2c;
+  --card-foreground: #f1f0eb;
+  --popover: #2c2c2c;
+  --popover-foreground: #f1f0eb;
+  --primary: #d5a310;
   --primary-foreground: #000000;
   --secondary: #292113;
-  --secondary-foreground: #F1F0EB;
-  --muted: #2C2C2C;
+  --secondary-foreground: #f1f0eb;
+  --muted: #2c2c2c;
   --muted-foreground: #a3a3a3;
-  --accent: #D5A310;
+  --accent: #d5a310;
   --accent-foreground: #000000;
   --destructive: hsl(0 62.8% 30.6%);
-  --destructive-foreground: #F1F0EB;
+  --destructive-foreground: #f1f0eb;
   --border: #292113;
   --input: #292113;
-  --ring: #D5A310;
+  --ring: #694e00;
   --chart-1: oklch(0.809 0.105 251.813);
   --chart-2: oklch(0.623 0.214 259.815);
   --chart-3: oklch(0.546 0.245 262.881);
@@ -122,8 +122,10 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body, html {
+  body,
+  html {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
     font-family: var(--font-inter), sans-serif;
   }
 }

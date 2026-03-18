@@ -1,103 +1,182 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../../ui/card";
-import { Dumbbell, Users, HeartPulse, Activity } from "lucide-react";
+  AnimatePresence,
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { useRef, useState } from "react";
+import { SearchBox } from "@/components/SearchBox";
+import { ServiceCard } from "@/components/service_card";
+import services from "@/data/services_data.json";
+import { Search } from "lucide-react";
 
 export function Services() {
-  const services = [
-    {
-      title: "Personal Training",
-      description:
-        "One-on-one coaching tailored to your specific goals, fitness level, and schedule.",
-      icon: <Activity className="h-10 w-10 text-primary" />,
-    },
-    {
-      title: "Group Classes",
-      description:
-        "High-energy sessions ranging from HIIT to Yoga, designed for all fitness levels.",
-      icon: <Users className="h-10 w-10 text-primary" />,
-    },
-    {
-      title: "Open Gym",
-      description:
-        "Access to our state-of-the-art equipment and facilities on your own schedule.",
-      icon: <Dumbbell className="h-10 w-10 text-primary" />,
-    },
-    {
-      title: "Nutrition Coaching",
-      description:
-        "Expert guidance to fuel your workouts and accelerate your fitness results.",
-      icon: <HeartPulse className="h-10 w-10 text-primary" />,
-    },
-  ];
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
+  const headingInView = useInView(headingRef, { once: true, margin: "-80px" });
+  const gridRef = useRef<HTMLDivElement>(null);
+  const gridInView = useInView(gridRef, { once: true, margin: "-60px" });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
+  const filteredServices = services.filter((s) =>
+    s.title.toLowerCase().includes(searchQuery.toLowerCase()),
+  );
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const kettleTopY = useTransform(scrollYProgress, [0, 1], [-30, 30]);
+  const kettleBottomY = useTransform(scrollYProgress, [0, 1], [30, -30]);
 
   return (
     <section
+      ref={sectionRef}
       id="services"
-      className="py-24 bg-background relative overflow-hidden"
+      className="relative py-24 md:py-32 bg-background overflow-hidden"
     >
+      {/* ── Kettlebell decorations ── */}
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="flex justify-center items-start"
+        className="absolute top-0 left-0  pointer-events-none"
+        style={{ y: kettleTopY }}
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 0.6, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-2">
-          OUR SERVICES
-        </h1>
+        <img src="img/kettlebell-up.svg" alt="" className="" />
       </motion.div>
-      <div className="container mx-auto px-6 max-w-6xl">
+
+      <motion.div
+        className="absolute bottom-0 right-0  pointer-events-none"
+        style={{ y: kettleBottomY }}
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 0.6, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <img src="img/kettlebell-down.svg" alt="" />
+      </motion.div>
+
+      {/* ── Ambient glow ── */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-75 rounded-full bg-[#D5A310]/5 blur-[120px]" />
+      </div>
+
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        {/* ── Heading ── */}
+        <div ref={headingRef} className="text-center mb-6">
+          <motion.div
+            className="flex items-center justify-center gap-3 mb-4"
+            initial={{ opacity: 0, y: 16 }}
+            animate={headingInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <div className="h-px w-8 bg-[#D5A310]" />
+            <span className="text-[#D5A310] text-xs font-mono tracking-[0.3em] uppercase">
+              What We Offer
+            </span>
+            <div className="h-px w-8 bg-[#D5A310]" />
+          </motion.div>
+
+          <div className="overflow-hidden mb-4">
+            <motion.h2
+              className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white"
+              initial={{ y: "100%" }}
+              animate={headingInView ? { y: "0%" } : {}}
+              transition={{
+                duration: 0.7,
+                delay: 0.2,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            >
+              Our Services
+            </motion.h2>
+          </div>
+
+          <motion.p
+            className="text-white/40 text-sm md:text-base max-w-xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 12 }}
+            animate={headingInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            Comprehensive fitness solutions designed to elevate your performance
+            and well-being.
+          </motion.p>
+        </div>
+
+        {/* ── Search ── */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          className="flex justify-center md:justify-end mb-12"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          {services.map((service, index) => (
-            <motion.div key={index} variants={itemVariants}>
-              <Card className="h-full bg-card/50 border-white/5 hover:border-primary/50 transition-colors duration-300">
-                <CardHeader>
-                  <div className="mb-4 bg-background/50 w-16 h-16 rounded-2xl flex items-center justify-center">
-                    {service.icon}
-                  </div>
-                  <CardTitle className="text-xl text-foreground font-bold">
-                    {service.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base text-muted-foreground leading-relaxed">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+          <SearchBox placeholder="Search services" onSearch={setSearchQuery} />
         </motion.div>
+
+        {/* ── Cards grid — wraps ServiceCard as-is in an animated wrapper ── */}
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredServices.length === 0 ? (
+              <motion.div
+                className="col-span-full flex flex-col items-center justify-center gap-3 py-16 text-center"
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
+                <Search className="text-white/20" size={36} />
+                <p className="text-white/50 text-sm font-medium">
+                  No services found for{" "}
+                  <span className="text-[#D5A310]">"{searchQuery}"</span>
+                </p>
+                <p className="text-white/25 text-xs">Try a different keyword</p>
+              </motion.div>
+            ) : (
+              filteredServices.map((service, i) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={gridInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.1 + i * 0.12,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  className=" transition-transform duration-300"
+                >
+                  <ServiceCard
+                    header={service.title}
+                    details={service.description}
+                    buttonText="Inquire Now"
+                  />
+                </motion.div>
+              ))
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* ── Bottom rule ── */}
+        <motion.div
+          className="mt-16 h-px w-full"
+          initial={{ scaleX: 0, originX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.4 }}
+          style={{
+            background:
+              "linear-gradient(to right, transparent, #D5A310 40%, #D5A310 60%, transparent)",
+          }}
+        />
       </div>
     </section>
   );

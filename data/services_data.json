@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Personal Training",
+    "description": "One-on-one coaching tailored to your specific goals, fitness level, and schedule.",
+    "number": "01"
+  },
+  {
+    "title": "Group Classes",
+    "description": "High-energy sessions ranging from HIIT to Yoga, designed for all fitness levels.",
+    "number": "02"
+  },
+  {
+    "title": "Open Gym",
+    "description": "Access to state-of-the-art equipment and facilities on your own schedule.",
+    "number": "03"
+  },
+  {
+    "title": "Nutrition Coaching",
+    "description": "Expert guidance to fuel your workouts and accelerate your fitness results.",
+    "number": "04"
+  },
+  {
+    "title": "Strength Training",
+    "description": "Programs focused on building muscle, improving endurance, and increasing power.",
+    "number": "05"
+  },
+  {
+    "title": "Cardio Training",
+    "description": "Structured cardio routines to improve heart health and burn calories effectively.",
+    "number": "06"
+  },
+  {
+    "title": "Weight Loss Programs",
+    "description": "Customized plans designed to help you lose weight safely and sustainably.",
+    "number": "07"
+  },
+  {
+    "title": "Bodybuilding Coaching",
+    "description": "Advanced training techniques to sculpt and define your physique.",
+    "number": "08"
+  }
+]
