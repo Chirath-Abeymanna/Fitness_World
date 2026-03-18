@@ -5,9 +5,9 @@ export function Footer() {
   return (
     <footer className="bg-secondary/20 border-t border-white/10 pt-16 pb-8">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="flex fflex-col md:flex-row gap-12 justify-between mb-12">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="space-y-4 max-w-md">
             <Link href="/" className="flex items-center gap-2 text-primary">
               <Dumbbell className="h-8 w-8" />
               <span className="text-xl font-bold tracking-tight text-foreground">
