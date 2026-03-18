@@ -46,8 +46,15 @@ export function Navbar() {
 
           {/* Desktop CTA + Mobile Hamburger */}
           <div className="flex items-center gap-4">
-            <Button className="hidden md:flex rounded-full p-5 text-white font-semibold hover:bg-[#906d05] transition-colors duration-300">
-              <Link href="#contact">Get In Touch</Link>
+            <Button
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="hidden md:flex rounded-full p-5 text-white font-semibold hover:bg-[#906d05] transition-colors duration-300"
+            >
+              Get In Touch
             </Button>
 
             <button
